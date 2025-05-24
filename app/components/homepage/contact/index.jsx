@@ -10,34 +10,39 @@ import { MdAlternateEmail } from "react-icons/md";
 
 function ContactSection() {
   const handleEmailClick = () => {
-    // Check if user is on mobile device
-    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-    
-    if (isMobile) {
-      // Try to open Gmail app first, fallback to web Gmail
-      const gmailAppUrl = `googlegmail://co?to=${personalData.email}`;
-      const webGmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${personalData.email}`;
-      
-      // Create a hidden link to test if Gmail app is available
-      const link = document.createElement('a');
-      link.href = gmailAppUrl;
-      
-      // Try opening Gmail app
-      window.location.href = gmailAppUrl;
-      
-      // Fallback to web Gmail after a short delay if app didn't open
-      setTimeout(() => {
-        window.open(webGmailUrl, '_blank');
-      }, 500);
-    } else {
-      // Desktop - open web Gmail
-      window.open(`https://mail.google.com/mail/?view=cm&fs=1&to=${personalData.email}`, '_blank');
-    }
-  };
+  if (typeof window === "undefined") return; // safeguard for SSR
 
-  const handlePhoneClick = () => {
-    window.open(`tel:${personalData.phone}`);
-  };
+  // Check if user is on mobile device
+  const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+  
+  if (isMobile) {
+    // Try to open Gmail app first, fallback to web Gmail
+    const gmailAppUrl = `googlegmail://co?to=${personalData.email}`;
+    const webGmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${personalData.email}`;
+    
+    // Create a hidden link to test if Gmail app is available
+    const link = document.createElement('a'); // safe here since it's inside client-only handler
+    link.href = gmailAppUrl;
+    
+    // Try opening Gmail app
+    window.location.href = gmailAppUrl;
+    
+    // Fallback to web Gmail after a short delay if app didn't open
+    setTimeout(() => {
+      window.open(webGmailUrl, '_blank');
+    }, 500);
+  } else {
+    // Desktop - open web Gmail
+    window.open(`https://mail.google.com/mail/?view=cm&fs=1&to=${personalData.email}`, '_blank');
+  }
+};
+
+const handlePhoneClick = () => {
+  if (typeof window === "undefined") return; // safeguard for SSR
+  window.open(`tel:${personalData.phone}`);
+};
+
+  
 
   return (
     <div id="contact" className="my-12 lg:my-16 relative mt-24 text-white">
