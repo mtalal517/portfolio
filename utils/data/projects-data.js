@@ -1,0 +1,47 @@
+export const projectsData = [
+    {
+        id: 1,
+        name: 'TextViz',
+        description: "TextViz is a Python-based web application that visualizes natural language data from the Cornell Movie Dialogs Dataset using interactive D3.js visualizations. The goal is to explore relationships, sentiment, and patterns in movie dialogue through engaging and meaningful charts.",
+        tools: ['Python', 'Flask', 'HTML', 'CSS', 'Javascript', 'D3.js', 'NLTK'],
+        role: 'FullStack Developer',
+        code: 'https://github.com/mtalal517/TextViz.git',
+        demo: '',
+    },
+    {
+        id: 2,
+        name: 'Emergency-Travel-Planner',
+        description: 'This project demonstrates the data structures to solve a real-world pathfinding problem. It is designed to assist travelers in planning their return journey to a specific destination in the minimum number of days, while taking into account various travel constraints such as road and aerial routes.',
+        tools: ['C++', 'BFS' ,'Graph',],
+        role: 'Algorithm Developer',
+        code: 'https://github.com/mtalal517/Emergency-Travel-Planner.git',
+        demo: '',
+    },
+    {
+        id: 3,
+        name: 'EnergyCast',
+        description: 'A web application for forecasting daily energy load using advanced time series models. This system enables accurate and interactive prediction of future electricity demand to support smart energy planning and grid optimization.',
+        tools: ['Python', 'HTML', 'CSS', 'FLASK', 'ARIMA', 'SARIMA', 'SVR', 'PROPHET', 'ETS'],
+        code: '',
+        role: 'Full Stack Developer',
+        demo: '',
+    },
+    {
+        id: 4,
+        name: 'DSBOT',
+         description: "An intelligent educational chatbot designed to teach data structures and algorithms through interactive conversations. Built with Google Colab integration and GPU optimization, DSBOT processes textbooks and educational materials to create a personalized AI tutor. Features include file upload support for PDFs and DOCX, fine-tuned language model training on T4 GPUs, real-time chat interface with conversation history, and comprehensive coverage of topics like arrays, linked lists, trees, graphs, sorting algorithms, and complexity analysis. The system includes automated text preprocessing, conversational training data generation, and a responsive Gradio-based interface for seamless learning experiences.",
+        tools: ['Python', 'PyTorch', 'Transformers', 'Gradio', 'Google Colab', 'NLTK', 'GPU Training'],
+        code: 'https://github.com/mtalal517/DS-BOT.git',
+        demo: '',
+        role: 'AI/ML Engineer',
+    },
+    {
+        id: 5,
+        name: 'SmartCart',
+        description: "Recommendation system on Amazon product data by loading datasets into MongoDB using Apache Spark, performing EDA with Pandas and Matplotlib, and training a collaborative filtering model with ALS matrix factorization",
+        code: '',
+        demo: '',
+        role: 'Full Stack Developer',
+        tools: ['Python', 'Spark', 'MongoDB', 'Pandas', 'Matplotlib', 'Collaborative Filtering'],
+    }
+];
